@@ -1,27 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './Screens/HomeScreen';
+import JogoScreen from './Screens/JogoScreen';
 
 const Stack = createNativeStackNavigator();
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text>Olá!</Text>
-      <Button
-        title="Jogar"
-        onPress={() => navigation.navigate('Jogo')}
-      />
-    </View>
-  );
-}
-
-function JogoScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.jogoText}>Jogo</Text>
-    </View>
-  );
-}
 
 export default function App() {
   return (
@@ -33,16 +16,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  jogoText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-});
